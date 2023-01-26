@@ -29,6 +29,7 @@
     "nodemailer": "^6.8.0",
     "pretty-checkbox": "^3.0.3",
     "request": "^2.88.0",
+    "serve-static": "^1.15.0",
     "stripe": "^6.15.0"
   },
   "description": ""
