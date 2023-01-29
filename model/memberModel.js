@@ -79,16 +79,16 @@ var memberDB = {
             });
         });
     },
+ 
     getMember: function (email) {
-        return new Promise( ( resolve, reject ) => {
+        return new Promise((resolve, reject) => {
             var conn = db.getConnection();
             conn.connect(function (err) {
                 if (err) {
                     console.log(err);
                     conn.end();
                     return reject(err);
-                }
-                else {
+                } else {
                     var sql = 'SELECT * FROM memberentity m WHERE m.EMAIL=?';
                     conn.query(sql, [email], function (err, result) {
                         if (err) {
@@ -132,6 +132,8 @@ var memberDB = {
             });
         });
     },
+
+    
     getBoughtItem: function (id) {
         return new Promise( ( resolve, reject ) => {
             var conn = db.getConnection();
