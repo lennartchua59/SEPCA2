@@ -199,25 +199,33 @@
                 var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                 return startDate.toLocaleDateString("en-US", options);
             }
+                
+            
             document.addEventListener("DOMContentLoaded", function () {
-var email = sessionStorage.getItem("memberEmail");
-fetch('/api/getMember?email=' + email)
-.then(response => response.json())
-.then(data => {
-let form = document.getElementById("profileForm");
-form.elements["name"].value = data.name;
-form.elements["email"].value = data.email;
-form.elements["phone"].value = data.phone;
-form.elements["city"].value = data.city;
-form.elements["address"].value = data.address;
-form.elements["securityQuestion"].value = data.securityQuestion;
-form.elements["securityAnswer"].value = data.securityAnswer;
-form.elements["age"].value = data.age;
-form.elements["income"].value = data.income;
-form.elements["serviceLevelAgreement"].checked = data.serviceLevelAgreement;
-})
-.catch(error => console.log(error));
-});
+                var email = sessionStorage.getItem("memberEmail");
+                fetch('/api/getMember?email=' + email)
+                .then(response => response.json())
+                .then(data => {
+                let form = document.getElementById("profileForm");
+                form.elements["name"].value = data.name;
+                form.elements["email"].value = data.email;
+                form.elements["phone"].value = data.phone;
+                form.elements["city"].value = data.city;
+                form.elements["address"].value = data.address;
+                form.elements["securityQuestion"].value = data.securityQuestion;
+                form.elements["securityAnswer"].value = data.securityAnswer;
+                form.elements["age"].value = data.age;
+                form.elements["income"].value = data.income;
+                form.elements["serviceLevelAgreement"].checked = data.serviceLevelAgreement;
+                })
+                .catch(error => console.log(error));
+                });
+
+
+
+
+                    
+ 
 
 
             async function submitForm() {
