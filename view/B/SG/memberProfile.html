@@ -71,7 +71,8 @@
                             }
                         }
                                          
-                            htmlTxt += '<h5>Order #' + (1) + '</h5>';
+                        for (i = 0; i < orderIdList.length; i++) {
+                htmlTxt += '<h5>Order #' + (i+1) + '</h5>';
                             var counter = 0;
                             //get bought items by order ID
                             for (j = 0; j < boughtItem.length; j++) {
@@ -165,11 +166,20 @@
 
                         htmlTxt += '<h4 style="font-weight: bold; padding-left: 20px">Total Amount Spent: $'+ overallPrice + '</h4>';
                         document.getElementById("salesHistoryTab").innerHTML = htmlTxt;
-                    }
+                    }}
                 }).catch(function(error) {
                     console.log(error);
                 });
             }, false);
+
+
+           
+
+
+
+
+
+
 
             function addWorkDays(startDate, days) {
                 var dow = startDate.getDay();
@@ -209,7 +219,7 @@ form.elements["serviceLevelAgreement"].checked = data.serviceLevelAgreement;
 .catch(error => console.log(error));
 });
 
-Thi
+
             async function submitForm() {
                 var oldPassword = document.getElementById('oldPassword').value;
                 var password = document.getElementById("password").value;

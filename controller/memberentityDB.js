@@ -27,9 +27,9 @@ app.get('/api/getMember', function (req, res) {
         });
 });
 
-app.get('/api/getBoughtItem/:id', middleware.checkToken, function (req, res) {
-    var id = req.params.id;
-    member.getBoughtItem(id)
+app.get('/api/getBoughtItem/:id',  function (req, res) {
+    var MEMBER_id = req.params.id;
+    member.getBoughtItem(MEMBER_id)
         .then((result) => {
             res.send(result);
         })

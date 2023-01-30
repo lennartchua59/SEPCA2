@@ -134,7 +134,7 @@ var memberDB = {
     },
 
     
-    getBoughtItem: function (id) {
+    getBoughtItem: function (MEMBER_id) {
         return new Promise( ( resolve, reject ) => {
             var conn = db.getConnection();
             conn.connect(function (err) {
@@ -151,7 +151,7 @@ var memberDB = {
                         +" WHERE sr.MEMBER_ID=? AND d.SALERECORD_ID = sr.id AND i.ID=ic.ITEM_ID AND"
                         +" ic.COUNTRY_ID=25 AND li.ITEM_ID=i.ID AND sr.ID=sl.SalesRecordEntity_ID AND"
                         +" li.ID=sl.itemsPurchased_ID AND f.ID=i.ID";
-                    conn.query(sql, [id], function (err, result) {
+                    conn.query(sql, [MEMBER_id], function (err, result) {
                         if (err) {
                             conn.end();
                             return reject(err);
