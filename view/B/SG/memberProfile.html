@@ -64,7 +64,7 @@
                         //sort order ID in ascending order
                         for (i = 0; i < size - 1; i++) {
                             for (j = 0; j < size - i - 1; j++) {
-                                if (orderIdList[j] > orderIdList[j + 1]) {
+                                if (orderIdList[j] > orderIList[j + 1]) {
                                     temp = orderIdList[j];
                                     orderIdList[j] = orderIdList[j + 1];
                                     orderIdList[j + 1] = temp;
@@ -73,11 +73,10 @@
                         }
 
                         for (i = 0; i < orderIdList.length; i++) {
-                            htmlTxt += '<h5>Order #' + (i + 1) + '</h5>';
+                            htmlTxt += '<h5>Order #' + (i + 1) + '</h5>';d
                             var counter = 0;
                             //get bought items by order ID
                             for (j = 0; j < boughtItem.length; j++) {
-                            
                                 if(boughtItem[j].id == orderIdList[i]) {
                                     var item = boughtItem[j];
                                     //display top level info
@@ -174,16 +173,6 @@
                     console.log(error);
                 });
         }, false);
-
-
-
-
-
-
-
-
-
-
         function addWorkDays(startDate, days) {
             var dow = startDate.getDay();
             var daysToAdd = parseInt(days);
