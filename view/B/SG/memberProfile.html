@@ -78,7 +78,7 @@
                             //get bought items by order ID
                             for (j = 0; j < boughtItem.length; j++) {
                             
-                                if(boughtItem[j].id == orderIdList[0]) {
+                                if(boughtItem[j].id == orderIdList[i]) {
                                     var item = boughtItem[j];
                                     //display top level info
                                     if (counter == 0) {
@@ -121,7 +121,7 @@
                                                             <tbody>';
                             for (y = 0; y < boughtItem.length; y++) {
 
-                                if (boughtItem[y].id == orderIdList[0]) {
+                                if (boughtItem[y].id == orderIdList[i]) {
                                     var product = boughtItem[y];
                                     htmlTxt += '\
                                         <tr class="cart_table_item">\
