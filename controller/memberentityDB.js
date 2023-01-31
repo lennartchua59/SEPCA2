@@ -27,7 +27,7 @@ app.get('/api/getMember', function (req, res) {
         });
 });
 
-app.get('/api/getBoughtItem/:id',  function (req, res) {
+app.get('/api/getBoughtItem/:id', middleware.checkToken,  function (req, res) {
     var MEMBER_id = req.params.id;
     member.getBoughtItem(MEMBER_id)
         .then((result) => {
@@ -91,6 +91,7 @@ app.post('/api/loginMember', jsonParser, function (req, res) {
 });
 
 var request = require('request');
+const { checkProcess } = require('forever');
 app.post('/api/registerMember', jsonParser, function (req, res) {
     var email = req.body.email;
     var password = req.body.password;

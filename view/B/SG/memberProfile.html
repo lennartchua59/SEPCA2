@@ -77,7 +77,7 @@
                             //get bought items by order ID
                             for (j = 0; j < boughtItem.length; j++) {
                             
-                                if(boughtItem[j].id == orderIdList[0]) {
+                                if(boughtItem[j].id == orderIdList[i]) {
                                     var item = boughtItem[j];
                                     //display top level info
                                     if(counter == 0) {
@@ -164,9 +164,11 @@
                                 </div>';
                             finalPrice = 0;
 
-                        htmlTxt += '<h4 style="font-weight: bold; padding-left: 20px">Total Amount Spent: $'+ overallPrice + '</h4>';
+                        
+                    }
+                    htmlTxt += '<h4 style="font-weight: bold; padding-left: 20px">Total Amount Spent: $'+ overallPrice + '</h4>';
                         document.getElementById("salesHistoryTab").innerHTML = htmlTxt;
-                    }}
+                }
                 }).catch(function(error) {
                     console.log(error);
                 });
